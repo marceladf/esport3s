@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ====== HEADER / MENU ====== -->
+  <header>
+    <nav>
+      <div class="logo-container">
+        <!-- Ícone do menu redondo que troca imagens -->
+        <img src="icons/futebol-icone.png" alt="Futebol" id="menu-icon">
+        <div class="logo-text">
+          <span class="main-title">Sports Hub</span>
+          <span class="subtitle-sports">Futebol • Tênis • F1</span>
+        </div>
+      </div>
+      <ul class="menu">
+        <li><a href="#campeonatos">Programação</a></li>
+        <li><a href="#idolos">Ídolos</a></li>
+        <li><a href="#historia">História</a></li>
+        <li><a href="#regras">Regras</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <section id="inicio" class="carrossel">
+    <div class="slides"> 
+      <div class="slide active">
+      <img src="estadio-banner.webp">
+    </div>
+    <div class="slide active">
+      <img src="carro-banner.webp">
+    </div>
+    <div class="slide active">
+      <img src="tenis-banner-principal.jpg">
+    </div>
+    </div>
+    <button class="prev" onclick="mudarSlide(-1)">❮</button>
+    <button class="next" onclick="mudarSlide(1)">❯</button>
+  </section>
+
+  <!-- ====== CAMPEONATOS ====== -->
+<section id="campeonatos">
+  <h2>Programação</h2>
+  <div class="programacao">
+    
+    <!-- Futebol -->
+    <div class="prog-card futebol">
+      <div class="icon-circle">
+        <img src="icons/icone-bola-futebol.png" alt="Futebol">
+      </div>
+      <h3>Futebol</h3>
+      <ul>
+        <li><span>16:00</span> Premier League - Arsenal vs Chelsea</li>
+        <li><span>18:30</span> La Liga - Real Madrid vs Barcelona</li>
+        <li><span>21:00</span> Champions League - PSG vs Bayern</li>
+      </ul>
+      <a href="futebol.html" class="btn btn-futebol">⚽ Ver Mais</a>
+    </div>
+
+    <!-- Tênis -->
+    <div class="prog-card tenis">
+      <div class="icon-circle">
+        <img src="icons/tenis-icone.png" alt="Tênis">
+      </div>
+      <h3>Tênis</h3>
+      <ul>
+        <li><span>14:00</span> Wimbledon - Semifinal Masculina</li>
+        <li><span>16:30</span> US Open - Quartas Femininas</li>
+        <li><span>19:00</span> ATP Masters - Final</li>
+      </ul>
+      <a href="tenis.html" class="btn btn-tenis">🎾 Ver Mais</a>
+    </div>
+
+    <!-- Fórmula 1 -->
+    <div class="prog-card f1">
+      <div class="icon-circle">
+        <img src="icons/pneu-icone.png" alt="Fórmula 1">
+      </div>
+      <h3>Fórmula 1</h3>
+      <ul>
+        <li><span>15:00</span> GP Brasil - Treino Livre 3</li>
+        <li><span>18:00</span> GP Brasil - Classificação</li>
+        <li><span>14:00</span> GP Brasil - Corrida (Domingo)</li>
+      </ul>
+      <a href="f1.html" class="btn btn-f1">🏎️ Ver Mais</a>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ====== ÍDOLOS ====== -->
+<section id="idolos">
+  <h2>Ídolos do Esporte</h2>
+  <p>Conheça as lendas que marcaram a história dos esportes</p>
+
+  <div class="programacao">
+    
+    <!-- Futebol -->
+    <div class="prog-card futebol">
+      <div class="icon-circle">
+        <img src="icons/icone-bola-futebol.png" alt="Futebol">
+      </div>
+      <div class="idolo-card">
+        <img src="idolos/pele.jpg" alt="Pelé">
+        <h4>Pelé</h4>
+        <p>Rei do Futebol • 3x Campeão Mundial</p>
+      </div>
+    </div>
+
+    <!-- Tênis -->
+    <div class="prog-card tenis">
+      <div class="icon-circle">
+        <img src="icons/tenis-icone.png" alt="Tênis">
+      </div>
+      <div class="idolo-card">
+        <img src="idolos/federer.jpg" alt="Roger Federer">
+        <h4>Roger Federer</h4>
+        <p>Lenda Suíça • 20x Grand Slam</p>
+      </div>
+    </div>
+
+    <!-- Fórmula 1 -->
+    <div class="prog-card f1">
+      <div class="icon-circle">
+        <img src="icons/pneu-icone.png" alt="Fórmula 1">
+      </div>
+      <div class="idolo-card">
+        <img src="idolos/senna.jpg" alt="Ayrton Senna">
+        <h4>Ayrton Senna</h4>
+        <p>Ídolo Brasileiro • 3x Campeão Mundial</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ====== HISTÓRIA - layout em blocos (um esporte por linha) ====== -->
+<section id="historia" class="site-section">
+  <div class="site-inner">
+    <h2>Sobre os Esportes</h2>
+    <p class="subtitle">Descubra a história e curiosidades dos seus esportes favoritos</p>
+
+    <!-- FUTEBOL (bloco 1 - side à direita) -->
+    <article class="historia-secao">
+      <div class="row left">
+        <!-- coluna principal (texto + cards) -->
+        <div class="col text-col">
+          <div class="icon-circle">
+            <!-- ícone pequeno do esporte -->
+            <img src="icons/icone-bola-futebol.png" alt="Futebol">
+          </div>
+          <h3>Futebol</h3>
+          <p class="lead">O esporte mais popular do mundo, jogado por duas times de 11 jogadores cada.</p>
+
+          <div class="info-card como">
+            <h4>⚙ Como Funciona</h4>
+            <p>Dois times tentam marcar gols chutando a bola para o gol adversário usando qualquer parte do corpo, exceto mãos e braços.</p>
+            <a class="btn btn-futebol" href="regras-futebol.html">Saiba Mais</a>
+          </div>
+        </div>
+
+        <!-- coluna lateral (curiosidades) -->
+        <aside class="col side-col">
+          <div class="info-card curiosidades">
+            <h4>✨ Curiosidades</h4>
+            <ul>
+              <li>Mais de 4 bilhões de fãs mundialmente</li>
+              <li>Jogado em mais de 200 países</li>
+              <li>Copa do Mundo a cada 4 anos</li>
+              <li>Origem na Inglaterra em 1863</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <!-- TÊNIS (bloco 2 - side à esquerda: usa row reversed) -->
+    <article class="historia-secao">
+      <div class="row right">
+        <div class="col text-col">
+          <div class="icon-circle">
+            <img src="icons/tenis-icone.png" alt="Tênis">
+          </div>
+          <h3>Tênis</h3>
+          <p class="lead">Esporte de raquete jogado individualmente ou em duplas, com uma bola sobre a rede.</p>
+
+          <div class="info-card como">
+            <h4>⚙ Como Funciona</h4>
+            <p>Jogadores usam raquetes para bater uma bola por cima da rede, buscando marcar pontos quando o oponente não consegue devolver.</p>
+            <a class="btn btn-tenis" href="regras-tenis.html">Saiba Mais</a>
+          </div>
+        </div>
+
+        <aside class="col side-col">
+          <div class="info-card curiosidades">
+            <h4>✨ Curiosidades</h4>
+            <ul>
+              <li>Surgiu na França no século XII</li>
+              <li>4 Grand Slams por ano</li>
+              <li>Quadras com diferentes superfícies</li>
+              <li>Mais de 1 bilhão de fãs</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <!-- FÓRMULA 1 (bloco 3 - side à direita novamente) -->
+    <article class="historia-secao">
+      <div class="row left">
+        <div class="col text-col">
+          <div class="icon-circle">
+            <img src="icons/pneu-icone.png" alt="Fórmula 1">
+          </div>
+          <h3>Fórmula 1</h3>
+          <p class="lead">A categoria mais alta do automobilismo, com carros de alta tecnologia e pilotos de elite.</p>
+
+          <div class="info-card como">
+            <h4>⚙ Como Funciona</h4>
+            <p>Os pilotos competem em corridas de alta velocidade em circuitos fechados, buscando completar o número de voltas em menor tempo possível.</p>
+            <a class="btn btn-f1" href="regras-f1.html">Saiba Mais</a>
+          </div>
+        </div>
+
+        <aside class="col side-col">
+          <div class="info-card curiosidades">
+            <h4>✨ Curiosidades</h4>
+            <ul>
+              <li>Velocidades acima de 350 km/h</li>
+              <li>Temporada com cerca de 22 corridas</li>
+              <li>Tecnologia testada vai para carros comuns</li>
+              <li>Mais de 500 milhões de fãs</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+  <!-- ====== REGRAS E COMO JOGAR ====== -->
+<section id="regras" class="site-section">
+  <div class="site-inner">
+    <h2>Regras e Como Jogar</h2>
+    <p class="subtitle">Aprenda as regras básicas e como começar a praticar cada esporte</p>
+
+    <!-- Abas de esportes -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="futebol">
+        <img src="icons/futebol-icone.png" alt=""> Futebol
+      </button>
+      <button class="tab-btn" data-tab="tenis">
+        <img src="icons/tenis-icone.png" alt=""> Tênis
+      </button>
+      <button class="tab-btn" data-tab="f1">
+        <img src="icons/pneu-icone.png" alt=""> Fórmula 1
+      </button>
+    </div>
+
+    <!-- Conteúdo das abas -->
+    <div class="tab-content active" id="futebol">
+      <div class="rules-grid">
+        <div class="rule-card">
+          <h3>📘 Regras Básicas</h3>
+          <ul>
+            <li>Dois times de 11 jogadores cada</li>
+            <li>Jogo de 90 minutos (45 min por tempo)</li>
+            <li>Apenas goleiros podem usar as mãos</li>
+            <li>Impedimento: jogador não pode estar à frente da defesa</li>
+            <li>Cartões amarelos e vermelhos para punições</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <h3>⚙ Como Jogar</h3>
+          <ul>
+            <li>Forme dois times de 11 jogadores</li>
+            <li>Defina um goleiro por time</li>
+            <li>Tente marcar gols no gol adversário</li>
+            <li>Use qualquer parte do corpo, exceto mãos</li>
+            <li>Respeite as regras de impedimento</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <h3>🎽 Equipamentos</h3>
+          <ul>
+            <li>Bola</li>
+            <li>Chuteiras</li>
+            <li>Uniforme</li>
+            <li>Caneleiras</li>
+            <li>Gol</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cta">
+        <a href="praticar-futebol.html" class="btn btn-futebol">⚽ Começar a Praticar Futebol</a>
+      </div>
+    </div>
+
+    <!-- Aba Tênis -->
+    <div class="tab-content" id="tenis">
+      <div class="rules-grid">
+        <div class="rule-card">
+          <h3>📘 Regras Básicas</h3>
+          <ul>
+            <li>Partidas individuais ou em duplas</li>
+            <li>Set é vencido com 6 games (2 de vantagem)</li>
+            <li>Pontuação: 15, 30, 40, game</li>
+            <li>Bola deve quicar dentro da quadra adversária</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <h3>⚙ Como Jogar</h3>
+          <ul>
+            <li>Saque atrás da linha de fundo</li>
+            <li>Troque golpes até alguém errar</li>
+            <li>Use diferentes tipos de golpe (forehand, backhand, saque)</li>
+            <li>Ganhe pontos quando o adversário não devolver a bola</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <h3>🎽 Equipamentos</h3>
+          <ul>
+            <li>Raquete</li>
+            <li>Bolas de tênis</li>
+            <li>Tênis apropriado</li>
+            <li>Rede</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cta">
+        <a href="praticar-tenis.html" class="btn btn-tenis">🎾 Começar a Praticar Tênis</a>
+      </div>
+    </div>
+
+    <!-- Aba Fórmula 1 -->
+    <div class="tab-content" id="f1">
+      <div class="rules-grid">
+        <div class="rule-card">
+          <h3>📘 Regras Básicas</h3>
+          <ul>
+            <li>Corridas em circuitos fechados</li>
+            <li>Temporada com várias provas (GPs)</li>
+            <li>Vitória é do piloto mais rápido no total de voltas</li>
+            <li>Punições para infrações (tempo, drive-through)</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <h3>⚙ Como Jogar</h3>
+          <ul>
+            <li>Piloto conduz carro de Fórmula 1</li>
+            <li>Cada equipe tem 2 carros</li>
+            <li>Estratégias de pit stop são essenciais</li>
+            <li>Ganhar pontos no campeonato a cada corrida</li>
+          </ul>
+        </div>
+
+        <div class="rule-card">
+          <h3>🎽 Equipamentos</h3>
+          <ul>
+            <li>Carro de Fórmula 1</li>
+            <li>Capacete</li>
+            <li>Macacão</li>
+            <li>Luvas e botas</li>
+            <li>Pit crew e boxes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cta">
+        <a href="praticar-f1.html" class="btn btn-f1">🏎️ Começar a Praticar F1</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <p>&copy; 2025 Sports World - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

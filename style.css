@@ -1,0 +1,650 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: #fff;
+  color: #111;
+  padding: 10px 20px;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: black;
+  text-decoration: none;
+}
+
+.logo-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-text {
+display: flex;
+flex-direction: column;
+text-align: left;
+line-height: 1.2;
+}
+
+/* Título Principal */
+.main-title {
+font-size: 1.4rem;
+font-weight: bold;
+color: black; /* Ou a cor que você desejar */
+}
+
+#menu-icon {
+width: 45px;
+height: 45px;
+border-radius: 50%;
+/* Remove a borda branca que estava no seu código anterior se houver */
+border: none; 
+cursor: pointer;
+}
+
+/* Subtítulo */
+.subtitle-sports {
+font-size: 0.8rem;
+color: #9aa8b7; /* Um cinza claro para o subtítulo */
+}
+
+/* CARROSSEL */
+.carrossel {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* ocupa 60% da tela, não 100% */
+  max-height: 500px; /* limite no desktop */
+  overflow: hidden;
+  margin-top: 60px; /* espaçamento da navbar */
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;   /* cobre toda a área */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.slide img {
+  width: 100vw;
+  height: 400px;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% {transform: translateX(0);}
+  33% {transform: translateX(-100%);}
+  66% {transform: translateX(-200%);}
+  100% {transform: translateX(0);}
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.idolos-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px;
+}
+
+.idolo img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.historia {
+  display: flex;
+  align-items: center;
+  margin: 40px;
+  gap: 20px;
+  background-color: #0b1220;
+}
+
+.historia.reverse {
+  flex-direction: row-reverse;
+}
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Programação */
+#campeonatos {
+  text-align: center;
+  padding: 50px 20px;
+  background: white;
+  color: black;
+}
+
+#campeonatos h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.programacao {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.prog-card {
+  background: #2a3242;
+  border-radius: 15px;
+  padding: 25px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle img {
+  width: 40px;
+  height: 40px;
+}
+
+.prog-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.prog-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  text-align: left;
+}
+
+.prog-card ul li {
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+.prog-card ul li span {
+  color: #00c46b;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Cores personalizadas */
+
+
+.btn-futebol { background: #1f8f3d; }
+.btn-tenis { background: #2b6dd8; }
+.btn-f1 { background: #d62828; }
+
+.btn:hover { opacity: 0.8; }
+
+#idolos {
+  text-align: center;
+  padding: 60px 20px;
+  background: #111827;
+  color: white;
+}
+
+#idolos h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #3b82f6;
+}
+
+#idolos p {
+  margin-bottom: 40px;
+  color: #a0aec0;
+}
+
+.idolo-card {
+  background: #1e2530;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.idolo-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.idolo-card h4 {
+  margin: 8px 0 5px 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.idolo-card p {
+  font-size: 0.9rem;
+  color: #cbd5e0;
+}
+
+/* container central para conteúdo (mantém o fundo da página) */
+.site-section {
+  background-color: #0b1220; /* respeita o fundo geral do site */
+  padding: 60px 0;
+  color: #e6eef8;
+
+}
+.site-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: #0b1220;
+}
+#historia h2 {
+  color: #60a5fa;
+  text-align: center;
+  margin-bottom: 6px;
+}
+#historia .subtitle {
+  text-align: center;
+  color: #9aa8b7;
+  margin-bottom: 30px;
+}
+
+/* cada bloco ocupa 100% da área central, mas sem criar um grande fundo */
+.historia-secao {
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+/* row com 2 colunas: texto e side */
+.row {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* alternância: left -> texto à esquerda, side à direita
+   right -> row-reverse (texto à direita, side à esquerda) */
+.row.right { flex-direction: row-reverse; }
+
+/* colunas */
+.col {
+  flex: 1;
+}
+
+/* lado lateral com largura fixa para o card de curiosidades */
+.side-col {
+  max-width: 380px;
+  flex: 0 0 380px;
+}
+
+/* título e lead */
+.text-col h3 {
+  margin: 6px 0 10px 0;
+  font-size: 1.35rem;
+}
+.lead {
+  color: #b9c6cf;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+/* ícone pequeno (em cima do título) */
+.icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  margin-bottom: 10px;
+}
+.icon-circle img { width: 50px; height: 50px; }
+
+/* cards internos (Como Funciona / Curiosidades) */
+.info-card {
+  background: #0b1220;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  color: #cfe6df;
+  margin-top: 12px;
+}
+
+/* curiosidades: lista com bullets pequenos coloridos */
+.info-card.curiosidades ul {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0 0;
+}
+.info-card.curiosidades li {
+  position: relative;
+  padding-left: 18px;
+  margin: 8px 0;
+  color: #b9c6cf;
+  font-size: 0.92rem;
+}
+.info-card.curiosidades li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #16a34a;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+/* botoes */
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.btn-futebol { background: #16a34a; }
+.btn-tenis   { background: #2563eb; }
+.btn-f1      { background: #ef4444; }
+
+/* Ajustes finos */
+.info-card.como h4,
+.info-card.curiosidades h4 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  color: #e6f7f1;
+}
+
+/* RESPONSIVO: empilha em telas menores */
+@media (max-width: 900px) {
+  .row, .row.right { flex-direction: column; }
+  .side-col { max-width: 100%; flex: 1 1 100%; }
+  .text-col { max-width: 100%; }
+  .text-col, .side-col { text-align: center; }
+  .icon-circle { margin: 0 auto 10px auto; }
+  .info-card { text-align: left; } /* mantém listas alinhadas à esquerda para legibilidade */
+}
+
+#regras {
+  padding: 60px 0;
+  color: #e6eef8;
+}
+#regras h2 {
+  text-align: center;
+  color: #60a5fa;
+  margin-bottom: 6px;
+}
+#regras .subtitle {
+  text-align: center;
+  color: #9aa8b7;
+  margin-bottom: 26px;
+}
+
+/* Abas */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+.tab-btn {
+  background: #1f2937;
+  color: #cbd5e1;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+.tab-btn img { width: 20px; height: 20px; }
+.tab-btn.active {
+  background: #16a34a;
+  color: white;
+}
+
+/* Conteúdo das abas */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* Cards de regras */
+.rules-grid {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.rule-card {
+  flex: 1;
+  background: #0b1220;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+.rule-card h3 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  color: #e6f7f1;
+}
+.rule-card ul {
+  list-style: none;
+  padding: 0;
+}
+.rule-card ul li {
+  margin: 8px 0;
+  padding-left: 18px;
+  position: relative;
+  font-size: 0.92rem;
+  color: #cbd5e1;
+}
+.rule-card ul li::before {
+  content: "•";
+  color: #16a34a;
+  position: absolute;
+  left: 0;
+}
+
+/* Botões */
+.cta { text-align: center; }
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn-futebol { background: #16a34a; }
+.btn-tenis   { background: #2563eb; }
+.btn-f1      { background: #ef4444; }
+
+/* CARROSSEL */
+.carrossel {
+  position: relative;
+  width: 100%;
+  height: 100vh;         /* ocupa 70% da altura da tela */
+  max-height: 600px;    /* limite no desktop */
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.slide {
+  max-width: 1000px;
+  height: 1000px;
+}
+
+.slide img {
+  height:60% ;
+  object-fit: cover;        /* cobre sem distorcer */
+  display: block;
+  filter: brightness(60%);
+}
+
+.slide-content {
+position: absolute;
+top: 50%; /* Centraliza verticalmente */
+left: 50%; /* Centraliza horizontalmente */
+transform: translate(-50%, -50%); /* Ajuste fino para centralização perfeita */
+text-align: center;
+color: white;
+z-index: 2; /* Garante que o texto fique acima da imagem */
+max-width: 80%; /* Para que o texto não fique muito largo em telas grandes */
+}
+
+.slide-content h1 {
+font-size: 4rem; /* Tamanho grande para o título do esporte */
+margin-bottom: 10px;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para melhorar leitura */
+text-transform: uppercase; /* Deixa o texto em maiúsculas */
+}
+
+.slide-content p {
+font-size: 1.5rem; /* Tamanho para o subtítulo/slogan */
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.slide-content {
+ opacity: 0;/* Torna o conteúdo invisível por padrão */
+transition: opacity 0.5s ease; /* Adiciona uma transição suave */
+
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+color: white;
+z-index: 2;
+max-width: 80%;
+}
+
+/* NOVO AJUSTE: Mostra o conteúdo apenas quando o slide está ativo */
+.slide.active .slide-content {
+opacity: 1; /* Torna o conteúdo visível */
+}
+
+
+/* Responsividade para o texto */
+@media (max-width: 768px) {
+.slide-content h1 {
+font-size: 2.5rem;
+}
+.slide-content p {
+font-size: 1.2rem;
+}
+}
+
+@media (max-width: 480px) {
+  .slide-content h1 {
+font-size: 1.8rem;
+}
+.slide-content p {
+font-size: 1rem;
+}
+}
+
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* CONTAINERS */
+.container {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .rules-grid { flex-direction: column; }
+}
+
+
