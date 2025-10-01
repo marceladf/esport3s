@@ -132,7 +132,6 @@ function initIdoloCarrossel(container) {
   if (nextBtn) {
     nextBtn.addEventListener('click', () => updateSlide(currentIndex + 1));
   }
-  
   // Inicializa o carrossel
   updateSlide(0); 
 }
