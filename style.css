@@ -26,6 +26,10 @@ header nav {
   padding: 0 10px; /* Adicione padding nas laterais */
 }
 
+body {
+  font-family: "Raleway", sans-serif;
+}
+
 .menu {
   list-style: none;
   display: flex;
@@ -330,6 +334,7 @@ header nav {
 .btn:hover { opacity: 0.8; }
 
 /* ====== CARROSSEL DE ÍDOLOS ====== */
+/* ====== CARROSSEL DE ÍDOLOS - CORRIGIDO ====== */
 .idolo-carrossel-container {
   position: relative;
   width: 100%;
@@ -338,12 +343,18 @@ header nav {
 
 .idolo-slides {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  position: relative;
+  width: 100%;
 }
 
 .idolo-slide {
   min-width: 100%;
+  max-width: 100%;
   flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.idolo-slide:not(.active) {
   display: none;
 }
 
@@ -351,31 +362,13 @@ header nav {
   display: block;
 }
 
-#idolos {
-  text-align: center;
-  padding: 60px 20px;
-  background: #111827;
-  color: white;
-}
-
-#idolos h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #3b82f6;
-  text-align: center;  /* ← Adicione essa linha se não tiver */
-}
-
-#idolos p {
-  margin-bottom: 40px;
-  color: #a0aec0;
-  text-align: center;  /* ← Adicione essa linha se não tiver */
-}
-
 .idolo-card {
   background: #1e2530;
   border-radius: 12px;
   padding: 15px;
   margin-top: 15px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .idolo-card img {
@@ -384,6 +377,7 @@ header nav {
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
+  display: block;
 }
 
 .idolo-card h4 {
@@ -395,6 +389,59 @@ header nav {
 .idolo-card p {
   font-size: 0.9rem;
   color: #cbd5e0;
+  margin: 0;
+}
+
+/* Botões do carrossel de ídolos */
+.idolo-prev, .idolo-next {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.idolo-prev:hover, .idolo-next:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.idolo-prev {
+  left: 10px;
+}
+
+.idolo-next {
+  right: 10px;
+}
+
+/* Indicadores (bolinhas) */
+.idolo-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding-bottom: 10px;
+}
+
+.idolo-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4a5568;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.idolo-indicator.active {
+  background: #00c46b;
+  width: 12px;
+  height: 12px;
 }
 
 /* Botões do carrossel de ídolos */
@@ -448,11 +495,39 @@ header nav {
   height: 12px;
 }
 
+#idolos {
+  text-align: center;
+  padding: 60px 20px;
+  background: #111827;
+  color: white;
+}
+
+#idolos h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #3b82f6;
+  text-align: center;
+}
+
+#idolos p {
+  margin-bottom: 40px;
+  color: #a0aec0;
+  text-align: center;
+}
+
 /* ====== HISTÓRIA ====== */
+/* Seção com fundo escuro (Ídolos e Regras) */
 .site-section {
   background-color: #0b1220;
   padding: 60px 0;
   color: #e6eef8;
+}
+
+/* Seção com fundo branco (História) */
+.site-section-light {
+  background-color: white;
+  padding: 60px 0;
+  color: #333;
 }
 
 .site-inner {
@@ -483,6 +558,8 @@ header nav {
   gap: 30px;
   align-items: flex-start;
 }
+
+
 
 /* REMOVA essa linha ou comente ela: */
 /* .row.right { flex-direction: row-reverse; } */
