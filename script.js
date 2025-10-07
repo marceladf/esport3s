@@ -8,11 +8,13 @@ const menu = document.getElementById("menu");
 let iconInterval;
 
 function startIconAnimation() {
+  // Só anima em desktop (tela maior que 768px)
+  if (window.innerWidth > 768) {
     iconInterval = setInterval(() => {
       i = (i + 1) % icons.length;
       menuIcon.src = icons[i];
     }, 2000);
-  
+  }
 }
 
 function stopIconAnimation() {
@@ -190,3 +192,4 @@ setInterval(() => {
   faviconIndex = (faviconIndex + 1) % faviconIcons.length;
   favicon.href = faviconIcons[faviconIndex];
 }, 2000); // Troca a cada 2 segundos
+
