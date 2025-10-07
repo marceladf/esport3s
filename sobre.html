@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre - Sports Hub</title>
+  <title>Sobre - Trick Slam</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" id="favicon" href="icons/futebol-icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
   <style>
     /* Estilos específicos da página Sobre */
     .sobre-hero {
-      background: linear-gradient(135deg, #1e3a8a 0%, #0b1220 100%);
-      padding: 100px 20px 60px 20px;
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      padding: 120px 20px 80px 20px;
       text-align: center;
       color: white;
+      margin-top: 70px;
     }
 
     .sobre-hero h1 {
@@ -19,19 +25,20 @@
       margin-bottom: 15px;
       text-transform: uppercase;
       letter-spacing: 2px;
+      font-family: "Michroma", sans-serif;
     }
 
     .sobre-hero p {
       font-size: 1.2rem;
-      color: #cbd5e0;
+      color: #e0f2fe;
       max-width: 700px;
       margin: 0 auto;
     }
 
     .sobre-content {
-      background: #0b1220;
+      background: white;
       padding: 60px 20px;
-      color: #e6eef8;
+      color: #333;
     }
 
     .sobre-inner {
@@ -40,31 +47,38 @@
     }
 
     .sobre-section {
-      background: #1e2530;
+      background: white;
       border-radius: 15px;
-      padding: 35px;
-      margin-bottom: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      border-left: 5px solid #3b82f6;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-left: 6px solid #059669;
     }
 
     .sobre-section h2 {
-      color: #60a5fa;
+      color: #059669;
       font-size: 1.8rem;
       margin-bottom: 20px;
       display: flex;
       align-items: center;
       gap: 15px;
+      font-family: "Michroma", sans-serif;
     }
 
-    .sobre-section h2 .icon {
-      font-size: 2rem;
+    .sobre-section h2 .icone-titulo {
+      width: 50px;
+      height: 50px;
+      animation: rotate 6s linear infinite;
+    }
+
+    .sobre-section h2 .icone-titulo:hover {
+      animation-play-state: paused;
     }
 
     .sobre-section p {
       line-height: 1.8;
-      color: #cbd5e0;
-      font-size: 1.05rem;
+      color: #555;
+      font-size: 1rem;
       margin-bottom: 15px;
     }
 
@@ -76,39 +90,45 @@
     }
 
     .estrutura-item {
-      background: #0b1220;
-      padding: 20px;
-      border-radius: 10px;
+      background: #f8fafb;
+      padding: 25px;
+      border-radius: 12px;
       text-align: center;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 2px solid #e5e7eb;
     }
 
     .estrutura-item:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(5, 150, 105, 0.15);
+      border-color: #059669;
     }
 
     .estrutura-item .numero {
       font-size: 2.5rem;
-      color: #3b82f6;
+      color: #059669;
       font-weight: bold;
       margin-bottom: 10px;
+      font-family: "Michroma", sans-serif;
     }
 
     .estrutura-item h3 {
-      color: #60a5fa;
+      color: #059669;
       font-size: 1.2rem;
       margin-bottom: 10px;
+      font-weight: 600;
     }
 
     .estrutura-item p {
       font-size: 0.95rem;
-      color: #9aa8b7;
+      color: #666;
+      margin: 0;
     }
 
     .esportes-icons {
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 50px;
       margin: 30px 0;
       flex-wrap: wrap;
     }
@@ -121,20 +141,41 @@
       width: 80px;
       height: 80px;
       padding: 20px;
-      background: #0b1220;
+      background: #f0fdf4;
       border-radius: 50%;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       transition: transform 0.3s;
+      animation: rotate 6s linear infinite;
     }
 
-    .esporte-icon-box:hover img {
+    .esporte-icon-box img:hover {
       transform: scale(1.1);
+      animation-play-state: paused;
     }
 
     .esporte-icon-box p {
-      color: #60a5fa;
+      color: #059669;
       font-weight: bold;
       font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-top: 30px;
+    }
+
+    .btn-voltar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(5, 150, 105, 0.4);
     }
 
     .cta-voltar {
@@ -142,29 +183,21 @@
       margin-top: 50px;
     }
 
-    .btn-voltar {
-      display: inline-block;
-      padding: 15px 40px;
-      background: linear-gradient(135deg, #3b82f6, #1e3a8a);
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .btn-voltar:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
-    }
-
     @media (max-width: 768px) {
+      .sobre-hero {
+        padding: 80px 20px 60px 20px;
+      }
+
       .sobre-hero h1 {
         font-size: 2rem;
       }
+
       .sobre-section {
         padding: 25px;
+      }
+
+      .esportes-icons {
+        gap: 30px;
       }
     }
   </style>
@@ -175,16 +208,16 @@
   <header>
     <nav>
       <div class="logo-container">
-        <img src="icons/futebol-icone.png" alt="Futebol" id="menu-icon">
+        <img src="icons/futebol-icone.png" alt="Menu" id="menu-icon" class="menu-toggle">
         <div class="logo-text">
-          <span class="main-title">Sports Hub</span>
+          <span class="main-title">Trick Slam</span>
           <span class="subtitle-sports">Futebol • Tênis • F1</span>
         </div>
       </div>
-      <ul class="menu">
+      <ul class="menu" id="menu">
         <li><a href="index.html">Início</a></li>
         <li><a href="index.html#campeonatos">Programação</a></li>
-        <li><a href="index.html#idolos">Ídolos</a></li>
+        <li><a href="idolos.html">Ídolos</a></li>
         <li><a href="sobre.html">Sobre</a></li>
       </ul>
     </nav>
@@ -192,8 +225,8 @@
 
   <!-- ====== HERO SOBRE ====== -->
   <section class="sobre-hero">
-    <h1>Sobre o Sports Hub</h1>
-    <p>Conheça mais sobre nossa plataforma dedicada aos maiores esportes do mundo</p>
+    <h1>Sobre o Trick Slam</h1>
+    <p>Site desenvolvido para a matéria de Comunicação Visual do curso de Comunicação e Multimeios da UEM.</p>
   </section>
 
   <!-- ====== CONTEÚDO SOBRE ====== -->
@@ -202,12 +235,15 @@
 
       <!-- Propósito do Site -->
       <div class="sobre-section">
-        <h2><span class="icon">🎯</span> Nosso Propósito</h2>
+        <h2>
+          <img src="icons/icone-bola-futebol.png" alt="Objetivo" class="icone-titulo">
+          Propósito
+        </h2>
         <p>
-          O <strong>Sports Hub</strong> foi criado pensando em trazer informações completas e atualizadas sobre três dos esportes mais populares e emocionantes do mundo: <strong>Futebol</strong>, <strong>Tênis</strong> e <strong>Fórmula 1</strong>.
+          O <strong>Trick Slam</strong> foi criado pensando em trazer informações completas e atualizadas sobre três dos esportes: <strong>Futebol</strong>, <strong>Tênis</strong> e <strong>Fórmula 1</strong>.
         </p>
         <p>
-          Nossa missão é ser o seu destino único para tudo relacionado a esses esportes, desde programações de campeonatos até histórias inspiradoras de ídolos que marcaram gerações.
+            A ideia seria trazer diferentes informações sobre cada esporte. Passando pela questãoda prgramação de cada um, seus ídolos, a história dos esportes, suas regras e como jogar. 
         </p>
 
         <div class="esportes-icons">
@@ -228,16 +264,19 @@
 
       <!-- Estrutura do Site -->
       <div class="sobre-section">
-        <h2><span class="icon">🏗️</span> Estrutura do Site</h2>
+        <h2>
+          <img src="icons/pneu-icone.png" alt="Estrutura" class="icone-titulo">
+          Estrutura do Site
+        </h2>
         <p>
-          Nossa plataforma foi cuidadosamente estruturada para proporcionar a melhor experiência ao usuário. Veja como organizamos o conteúdo:
+          A forma como o conteúdo ficou organizada foi:
         </p>
 
         <div class="estrutura-grid">
           <div class="estrutura-item">
             <div class="numero">1</div>
             <h3>Banner Inicial</h3>
-            <p>Um carrossel dinâmico que apresenta os três esportes com imagens impactantes e textos inspiradores.</p>
+            <p>Um carrossel dinâmico que apresenta os três esportes com imagens respectivas..</p>
           </div>
 
           <div class="estrutura-item">
@@ -249,7 +288,7 @@
           <div class="estrutura-item">
             <div class="numero">3</div>
             <h3>Ídolos</h3>
-            <p>Uma seção especial dedicada aos atletas que marcaram a história. Clique para conhecer mais sobre cada lenda do esporte.</p>
+            <p>Uma seção especial dedicada aos atletas que marcaram a história. Com a ideia de que para clicar em cada um e assim que a pessoa seja redirecionada para uma página com a história daquele atleta.</p>
           </div>
 
           <div class="estrutura-item">
@@ -268,53 +307,92 @@
 
       <!-- A Importância dos Atletas -->
       <div class="sobre-section">
-        <h2><span class="icon">⭐</span> A Importância dos Atletas</h2>
+        <h2>
+          <img src="icons/tenis-icone.png" alt="Atletas" class="icone-titulo">
+          Fontes e Cores
+        </h2>
         <p>
-          Sabemos que uma parte fundamental do esporte são os <strong>atletas</strong>. Eles inspiram, emocionam e criam momentos históricos que ficam eternizados na memória dos fãs.
+          A fonte utilizada para H1 e H2 foi a Michroma e para os demais headers e parágrafo foi utilizada a fonte Raleway. A fonte Michroma é divertida mas séria ao mesmo tempo e trás um movimento legal para os títulos, já a fonte Ralway é "mais comum", parecida até mesmo com a arial. Pelo site já contar com ícones se movimentando e cores, preferi não escolher fontes com muita informação.
         </p>
         <p>
-          Por isso, o Sports Hub apresenta uma seção especial sobre os <strong>ídolos dos esportes</strong>, com a proposta de que você possa clicar em cada atleta e acessar uma página dedicada com mais informações, estatísticas, conquistas e curiosidades sobre suas carreiras.
-        </p>
-      </div>
-
-      <!-- Funcionalidades Interativas -->
-      <div class="sobre-section">
-        <h2><span class="icon">💡</span> Navegação Intuitiva</h2>
-        <p>
-          O site foi desenvolvido com foco na <strong>experiência do usuário</strong>. Cada seção foi pensada para ser intuitiva e de fácil navegação:
-        </p>
-        <p>
-          ✅ <strong>Design responsivo</strong> que se adapta a qualquer dispositivo<br>
-          ✅ <strong>Carrosséis interativos</strong> para navegar pelos conteúdos<br>
-          ✅ <strong>Sistema de abas</strong> para organizar as informações<br>
-          ✅ <strong>Visual atrativo</strong> com cores específicas para cada esporte<br>
-          ✅ <strong>Conteúdo atualizado</strong> sobre campeonatos e competições
+          A ideia das cores seria trabalhar com uam cor para cada esporte, ficando verde para o futebol, pensando no campo, vermelho para fórmula 1, pensando tanto no pneu quanto na Ferrari, por ser uma marca que todos conhecem e para o tênis a cor laranja remetendo a quadra de saibro.
         </p>
       </div>
 
-      <!-- Call to Action -->
-      <div class="cta-voltar">
-        <a href="index.html" class="btn-voltar">← Voltar para o Início</a>
-      </div>
+    
 
     </div>
   </section>
 
   <!-- ====== FOOTER ====== -->
   <footer>
-    <p>&copy; 2025 Sports Hub - Todos os direitos reservados</p>
+    <p>&copy; 2025 Trick Slam - Todos os direitos reservados</p>
   </footer>
 
   <script>
-    // Animação do ícone do menu (mesma do index)
+    // ====== ÍCONE DO MENU ANIMADO ======
     const icons = ["icons/futebol-icone.png", "icons/pneu-icone.png", "icons/tenis-icone.png"];
     let i = 0;
     const menuIcon = document.getElementById("menu-icon");
+    const menu = document.getElementById("menu");
 
-    setInterval(() => {
-      i = (i + 1) % icons.length;
-      menuIcon.src = icons[i];
-    }, 2000);
+    let iconInterval;
+
+    function startIconAnimation() {
+      if (window.innerWidth > 768) {
+        iconInterval = setInterval(() => {
+          i = (i + 1) % icons.length;
+          menuIcon.src = icons[i];
+        }, 2000);
+      }
+    }
+
+    function stopIconAnimation() {
+      clearInterval(iconInterval);
+    }
+
+    startIconAnimation();
+
+    // ====== MENU MOBILE ======
+    menuIcon.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        menu.classList.toggle('active');
+        
+        let overlay = document.querySelector('.menu-overlay');
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.classList.add('menu-overlay');
+          document.body.appendChild(overlay);
+          
+          overlay.addEventListener('click', () => {
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+          });
+        }
+        overlay.classList.toggle('active');
+      }
+    });
+
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          menu.classList.remove('active');
+          const overlay = document.querySelector('.menu-overlay');
+          if (overlay) overlay.classList.remove('active');
+        }
+      });
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        menu.classList.remove('active');
+        const overlay = document.querySelector('.menu-overlay');
+        if (overlay) overlay.classList.remove('active');
+        stopIconAnimation();
+        startIconAnimation();
+      } else {
+        stopIconAnimation();
+      }
+    });
   </script>
 
 </body>
