@@ -8,17 +8,17 @@ const menu = document.getElementById("menu");
 let iconInterval;
 
 function startIconAnimation() {
-  if (window.innerWidth > 768) {
     iconInterval = setInterval(() => {
       i = (i + 1) % icons.length;
       menuIcon.src = icons[i];
     }, 2000);
-  }
+  
 }
 
 function stopIconAnimation() {
   clearInterval(iconInterval);
 }
+
 startIconAnimation();
 
 // ====== MENU MOBILE (TOGGLE) ======
@@ -147,21 +147,39 @@ function initIdoloCarrossel(container) {
 
 document.querySelectorAll('.idolo-carrossel-container').forEach(initIdoloCarrossel);
 
-// ====== SISTEMA DE ABAS (REGRAS) ======
+// ====== SISTEMA DE ABAS (REGRAS) COM MUDANÇA DE COR ======
 const tabButtons = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
+const regrasSection = document.getElementById('regras');
 
 tabButtons.forEach(button => {
   button.addEventListener('click', () => {
+    // Remove active de todos os botões e conteúdos
     tabButtons.forEach(btn => btn.classList.remove('active'));
     tabContents.forEach(content => content.classList.remove('active'));
     
+    // Adiciona active no botão clicado
     button.classList.add('active');
     
+    // Mostra o conteúdo correspondente
     const tabId = button.getAttribute('data-tab');
     document.getElementById(tabId).classList.add('active');
+    
+    // Remove todas as classes de cor da seção
+    regrasSection.classList.remove('active-futebol', 'active-tenis', 'active-f1');
+    
+    // Adiciona a classe de cor correspondente
+    if (tabId === 'futebol') {
+      regrasSection.classList.add('active-futebol');
+    } else if (tabId === 'tenis') {
+      regrasSection.classList.add('active-tenis');
+    } else if (tabId === 'f1') {
+      regrasSection.classList.add('active-f1');
+    }
   });
 });
+// Inicializa com Futebol ativo
+regrasSection.classList.add('active-futebol');
 
 // ====== FAVICON ANIMADO ======
 const faviconIcons = ["icons/futebol-icone.png", "icons/pneu-icone.png", "icons/tenis-icone.png"];
