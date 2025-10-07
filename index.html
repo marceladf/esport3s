@@ -11,6 +11,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -49,7 +53,7 @@
       <div class="slide">
         <img src="carro-banner.webp" alt="Fórmula 1">
         <div class="slide-content">
-          <h1>FÓRMULA 1</h1>
+          <h1 class="titulo-f1-banner">FÓRMULA 1</h1>
           <p>Velocidade e adrenalina pura</p>
         </div>
       </div>
@@ -71,46 +75,172 @@
     <div class="programacao">
       
       <!-- Futebol -->
-      <div class="prog-card futebol">
-        <div class="icon-circle">
-          <img src="icons/icone-bola-futebol.png" alt="Futebol">
+        <div class="card">
+        <div class="card-header futebol">
+          <img src="icons/futebol-icone.png" alt="Menu" id="menu-icon" class="menu-toggle">
+          <h2>UEFA Champions League</h2>
+          <span class="status-badge">Em Andamento</span>
         </div>
-        <h3>Futebol</h3>
-        <ul>
-          <li><span>16:00</span> Premier League - Arsenal vs Chelsea</li>
-          <li><span>18:30</span> La Liga - Real Madrid vs Barcelona</li>
-          <li><span>21:00</span> Champions League - PSG vs Bayern</li>
-        </ul>
-        <a href="futebol.html" class="btn btn-futebol">⚽ Ver Mais</a>
+        <div class="card-body">
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>Início: 31/08/2025<br>Fim: 30/05/2026</span>
+          </div>
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>Europa</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-detalhes">Ver mais detalhes →</a>
+        </div>
       </div>
 
-      <!-- Tênis -->
-      <div class="prog-card tenis">
-        <div class="icon-circle">
-          <img src="icons/tenis-icone.png" alt="Tênis">
+      <!-- Campeonato Brasileiro -->
+      <div class="card">
+        <div class="card-header futebol">
+          <img src="icons/futebol-icone.png" alt="Menu" id="menu-icon" class="menu-toggle">
+          <h2>Campeonato Brasileiro</h2>
+          <span class="status-badge">Próximo</span>
         </div>
-        <h3>Tênis</h3>
-        <ul>
-          <li><span>14:00</span> Wimbledon - Semifinal Masculina</li>
-          <li><span>16:30</span> US Open - Quartas Femininas</li>
-          <li><span>19:00</span> ATP Masters - Final</li>
-        </ul>
-        <a href="tenis.html" class="btn btn-tenis">🎾 Ver Mais</a>
+        <div class="card-body">
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>Início: 11/04/2025<br>Fim: 07/12/2025</span>
+          </div>
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>Brasil</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-detalhes">Ver mais detalhes →</a>
+        </div>
       </div>
 
-      <!-- Fórmula 1 -->
-      <div class="prog-card f1">
-        <div class="icon-circle">
-          <img src="icons/pneu-icone.png" alt="Fórmula 1">
+     
+
+      <!-- Mundial de F1 -->
+      <div class="card">
+        <div class="card-header f1">
+           <img src="icons/pneu-icone.png" alt="Menu" id="menu-icon" class="menu-toggle">
+          <h2>Campeonato Mundial de F1</h2>
+          <span class="status-badge">Em Andamento</span>
         </div>
-        <h3>Fórmula 1</h3>
-        <ul>
-          <li><span>15:00</span> GP Brasil - Treino Livre 3</li>
-          <li><span>18:00</span> GP Brasil - Classificação</li>
-          <li><span>14:00</span> GP Brasil - Corrida (Domingo)</li>
-        </ul>
-        <a href="f1.html" class="btn btn-f1">🏎️ Ver Mais</a>
+        <div class="card-body">
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>Início: 15/03/2025<br>Fim: 22/11/2025</span>
+          </div>
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>Mundial</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-detalhes">Ver mais detalhes →</a>
+        </div>
       </div>
+
+      <!-- GP de Mônaco -->
+      <div class="card">
+        <div class="card-header f1">
+           <img src="icons/pneu-icone.png" alt="Menu" id="menu-icon" class="menu-toggle">
+          <h2>GP de Mônaco</h2>
+          <span class="status-badge">Próximo</span>
+        </div>
+        <div class="card-body">
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>Início: 22/05/2025<br>Fim: 24/05/2025</span>
+          </div>
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>Monte Carlo, Mônaco</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-detalhes">Ver mais detalhes →</a>
+        </div>
+      </div>
+
+       <!-- US Open -->
+      <div class="card">
+        <div class="card-header tenis">
+          <img src="icons/tenis-icone.png" alt="Menu" id="menu-icon" class="menu-toggle">
+          <h2>US Open</h2>
+          <span class="status-badge">Próximo</span>
+        </div>
+        <div class="card-body">
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>Início: 24/08/2025<br>Fim: 06/09/2025</span>
+          </div>
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>Nova York, EUA</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-detalhes">Ver mais detalhes →</a>
+        </div>
+      </div>
+
+      <!-- Wimbledon -->
+      <div class="card">
+        <div class="card-header tenis">
+          <img src="icons/tenis-icone.png" alt="Menu" id="menu-icon" class="menu-toggle">
+          <h2>Wimbledon</h2>
+          <span class="status-badge">Próximo</span>
+        </div>
+        <div class="card-body">
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>Início: 22/06/2025<br>Fim: 05/07/2025</span>
+          </div>
+          <div class="info-row">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>Londres, Inglaterra</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="btn-detalhes">Ver mais detalhes →</a>
+        </div>
+      </div>
+
+    </div>
+
+
 
     </div>
   </section>
@@ -165,49 +295,6 @@
       </div>
     </div>
 
-    <!-- Tênis -->
-    <div class="prog-card tenis">
-      <div class="icon-circle">
-        <img src="icons/tenis-icone.png" alt="Tênis">
-      </div>
-      
-      <div class="idolo-carrossel-container">
-        <div class="idolo-slides">
-          <!-- Slide 1 - Federer -->
-          <div class="idolo-slide active">
-            <div class="idolo-card">
-              <img src="idolos/federer.jpg" alt="Roger Federer">
-              <h4>Roger Federer</h4>
-              <p>Lenda Suíça • 20x Grand Slam</p>
-            </div>
-          </div>
-          
-          <!-- Slide 2 - Serena -->
-          <div class="idolo-slide">
-            <div class="idolo-card">
-              <img src="idolos/serena.jpg" alt="Serena Williams">
-              <h4>Serena Williams</h4>
-              <p>Rainha do Tênis • 23x Grand Slam</p>
-            </div>
-          </div>
-          
-          <!-- Slide 3 - Nadal -->
-          <div class="idolo-slide">
-            <div class="idolo-card">
-              <img src="idolos/alcaraz.avif" alt="Rafael Nadal">
-              <h4>Carlos Alcaraz</h4>
-              <p>Jogador mais jovem na história a chegar ao número 1 do mundo • 6x Grand Slam</p>
-            </div>
-          </div>
-        </div>
-        
-        <button class="idolo-prev">❮</button>
-        <button class="idolo-next">❯</button>
-        
-        <div class="idolo-indicators"></div>
-      </div>
-    </div>
-
     <!-- Fórmula 1 -->
     <div class="prog-card f1">
       <div class="icon-circle">
@@ -251,6 +338,51 @@
       </div>
     </div>
 
+    <!-- Tênis -->
+    <div class="prog-card tenis">
+      <div class="icon-circle">
+        <img src="icons/tenis-icone.png" alt="Tênis">
+      </div>
+      
+      <div class="idolo-carrossel-container">
+        <div class="idolo-slides">
+          <!-- Slide 1 - Federer -->
+          <div class="idolo-slide active">
+            <div class="idolo-card">
+              <img src="idolos/federer.jpg" alt="Roger Federer">
+              <h4>Roger Federer</h4>
+              <p>Lenda Suíça • 20x Grand Slam</p>
+            </div>
+          </div>
+          
+          <!-- Slide 2 - Serena -->
+          <div class="idolo-slide">
+            <div class="idolo-card">
+              <img src="idolos/serena.jpg" alt="Serena Williams">
+              <h4>Serena Williams</h4>
+              <p>Rainha do Tênis • 23x Grand Slam</p>
+            </div>
+          </div>
+          
+          <!-- Slide 3 - Nadal -->
+          <div class="idolo-slide">
+            <div class="idolo-card">
+              <img src="idolos/alcaraz.avif" alt="Rafael Nadal">
+              <h4>Carlos Alcaraz</h4>
+              <p>Jogador mais jovem na história a chegar ao número 1 do mundo • 6x Grand Slam</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="idolo-prev">❮</button>
+        <button class="idolo-next">❯</button>
+        
+        <div class="idolo-indicators"></div>
+      </div>
+    </div>
+
+    
+
   </div>
 </section>
 
@@ -272,7 +404,7 @@
     <!-- coluna do texto (mantém como está) -->
     <div class="col text-col">
       <div class="icon-circle">
-        <img src="icons/icone-bola-futebol.png" alt="Futebol">
+        <img src="icons/futebol-icone.png" alt="Futebol">
       </div>
       <h3>Futebol</h3>
       <p class="lead">O esporte mais popular do mundo, jogado por duas times de 11 jogadores cada.</p>
@@ -351,12 +483,13 @@
         <button class="tab-btn active" data-tab="futebol">
           <img src="icons/futebol-icone.png" alt=""> Futebol
         </button>
-        <button class="tab-btn" data-tab="tenis">
-          <img src="icons/tenis-icone.png" alt=""> Tênis
-        </button>
         <button class="tab-btn" data-tab="f1">
           <img src="icons/pneu-icone.png" alt=""> Fórmula 1
         </button>
+        <button class="tab-btn" data-tab="tenis">
+          <img src="icons/tenis-icone.png" alt=""> Tênis
+        </button>
+        
       </div>
 
       <!-- Conteúdo Futebol -->
@@ -400,44 +533,6 @@
         </div>
       </div>
 
-      <!-- Conteúdo Tênis -->
-      <div class="tab-content" id="tenis">
-        <div class="rules-grid">
-          <div class="rule-card">
-            <h3>📘 Regras Básicas</h3>
-            <ul>
-              <li>Partidas individuais ou em duplas</li>
-              <li>Set é vencido com 6 games (2 de vantagem)</li>
-              <li>Pontuação: 15, 30, 40, game</li>
-              <li>Bola deve quicar dentro da quadra adversária</li>
-            </ul>
-          </div>
-
-          <div class="rule-card">
-            <h3>⚙ Como Jogar</h3>
-            <ul>
-              <li>Saque atrás da linha de fundo</li>
-              <li>Troque golpes até alguém errar</li>
-              <li>Use diferentes tipos de golpe (forehand, backhand, saque)</li>
-              <li>Ganhe pontos quando o adversário não devolver a bola</li>
-            </ul>
-          </div>
-
-          <div class="rule-card">
-            <h3>🎽 Equipamentos</h3>
-            <ul>
-              <li>Raquete</li>
-              <li>Bolas de tênis</li>
-              <li>Tênis apropriado</li>
-              <li>Rede</li>
-            </ul>
-          </div>
-        </div>
-        <div class="cta">
-          <a href="praticar-tenis.html" class="btn btn-tenis">🎾 Começar a Praticar Tênis</a>
-        </div>
-      </div>
-
       <!-- Conteúdo F1 -->
       <div class="tab-content" id="f1">
         <div class="rules-grid">
@@ -476,6 +571,46 @@
           <a href="praticar-f1.html" class="btn btn-f1">🏎️ Começar a Praticar F1</a>
         </div>
       </div>
+
+
+      <!-- Conteúdo Tênis -->
+      <div class="tab-content" id="tenis">
+        <div class="rules-grid">
+          <div class="rule-card">
+            <h3>📘 Regras Básicas</h3>
+            <ul>
+              <li>Partidas individuais ou em duplas</li>
+              <li>Set é vencido com 6 games (2 de vantagem)</li>
+              <li>Pontuação: 15, 30, 40, game</li>
+              <li>Bola deve quicar dentro da quadra adversária</li>
+            </ul>
+          </div>
+
+          <div class="rule-card">
+            <h3>⚙ Como Jogar</h3>
+            <ul>
+              <li>Saque atrás da linha de fundo</li>
+              <li>Troque golpes até alguém errar</li>
+              <li>Use diferentes tipos de golpe (forehand, backhand, saque)</li>
+              <li>Ganhe pontos quando o adversário não devolver a bola</li>
+            </ul>
+          </div>
+
+          <div class="rule-card">
+            <h3>🎽 Equipamentos</h3>
+            <ul>
+              <li>Raquete</li>
+              <li>Bolas de tênis</li>
+              <li>Tênis apropriado</li>
+              <li>Rede</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cta">
+          <a href="praticar-tenis.html" class="btn btn-tenis">🎾 Começar a Praticar Tênis</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
