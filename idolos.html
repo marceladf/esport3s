@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ídolos - Sports Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" id="favicon" href="icons/futebol-icone.png">
+  <style>
+    /* Estilos da página de Ídolos */
+    .idolos-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      min-height: calc(100vh - 80px);
+      margin-top: 70px;
+    }
+
+    .esporte-secao {
+      padding: 40px 20px;
+      border-right: 3px solid #333;
+    }
+
+    .esporte-secao:last-child {
+      border-right: none;
+    }
+
+    .esporte-secao.futebol {
+      background: #0a7238;
+      color: white;
+    }
+
+    .esporte-secao.f1 {
+      background: #b91c1c;
+      color: white;
+    }
+
+    .esporte-secao.tenis {
+      background: #d97706;
+      color: white;
+    }
+
+    .esporte-secao h2 {
+      font-size: 2rem;
+      margin: 0 0 30px 0;
+      text-align: center;
+      font-family: "Michroma", sans-serif;
+    }
+
+    .filtro-letras {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+
+    .letra-btn {
+      padding: 10px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      background: transparent;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .letra-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: white;
+    }
+
+    .letra-btn.active {
+      background: white;
+      color: inherit;
+      border-color: white;
+    }
+
+    .atletas-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .atleta-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .atleta-card:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+      border-color: white;
+    }
+
+    .atleta-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.3rem;
+    }
+
+    .atleta-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .mensagem-vazia {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    .esporte-secao h2 {
+  font-size: 2rem;
+  margin: 0 0 30px 0;
+  text-align: center;
+  font-family: "Michroma", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.titulo-icone {
+  width: 50px;
+  height: 50px;
+  animation: rotate 6s linear infinite;
+}
+
+.titulo-icone:hover {
+  animation-play-state: paused;
+}
+
+    @media (max-width: 1200px) {
+      .idolos-container {
+        grid-template-columns: 1fr;
+      }
+
+      .esporte-secao {
+        border-right: none;
+        border-bottom: 3px solid #333;
+      }
+
+      .esporte-secao:last-child {
+        border-bottom: none;
+      }
+
+      .esporte-secao {
+        padding: 30px 20px;
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .esporte-secao h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .filtro-letras {
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+        gap: 5px;
+        margin-bottom: 20px;
+      }
+
+      .letra-btn {
+        padding: 8px;
+        font-size: 0.8rem;
+      }
+
+      .atleta-card {
+        padding: 15px;
+      }
+
+      .atleta-card h3 {
+        font-size: 1.1rem;
+      }
+
+      .atleta-card p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== HEADER / MENU ====== -->
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="icons/futebol-icone.png" alt="Menu" id="menu-icon" class="menu-toggle">
+        <div class="logo-text">
+          <span class="main-title">Sports Hub</span>
+          <span class="subtitle-sports">Futebol • Tênis • F1</span>
+        </div>
+      </div>
+      
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#campeonatos">Programação</a></li>
+        <li><a href="idolos.html">Ídolos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ====== SEÇÕES DE ÍDOLOS ====== -->
+  <div class="idolos-container">
+    
+    <!-- FUTEBOL -->
+    <div class="esporte-secao futebol">
+      <h2>
+  <img src="icons/icone-bola-futebol.png" alt="Futebol" class="titulo-icone">
+  Futebol
+</h2>
+      
+      <div class="filtro-letras" id="filtro-futebol"></div>
+      <div class="atletas-lista" id="atletas-futebol"></div>
+    </div>
+
+    <!-- FÓRMULA 1 -->
+    <div class="esporte-secao f1">
+      <h2>
+         <img src="icons/pneu-icone.png" alt="Menu" id="menu-icon" class="menu-toggle">Fórmula 1</h2>
+      
+      <div class="filtro-letras" id="filtro-f1"></div>
+      <div class="atletas-lista" id="atletas-f1"></div>
+    </div>
+
+    <!-- TÊNIS -->
+    <div class="esporte-secao tenis">
+      <h2>
+        <img src="icons/tenis-icone.png" alt="Menu" id="menu-icon" class="menu-toggle">Tênis</h2>
+      
+      <div class="filtro-letras" id="filtro-tenis"></div>
+      <div class="atletas-lista" id="atletas-tenis"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // ====== DADOS DOS ATLETAS ======
+    const atletas = {
+      futebol: [
+        { nome: "Pelé", descricao: "Rei do Futebol • 3x Campeão Mundial" },
+        { nome: "Maradona", descricao: "Gênio Argentino • Campeão Mundial 1986" },
+        { nome: "Arthur Antunes (Zico)", descricao: "Mais conhecido como Zico • 508 gols pelo Flamengo" },
+        { nome: "Ronaldo", descricao: "Fenômeno • 2x Campeão Mundial" },
+        { nome: "Ronaldinho", descricao: "Mágico do Futebol • Campeão Mundial 2002" },
+        { nome: "Criança", descricao: "Ídolo da Base • Futuro da Seleção" }
+      ],
+      f1: [
+        { nome: "Ayrton Senna", descricao: "Ídolo Brasileiro • 3x Campeão Mundial" },
+        { nome: "Michael Schumacher", descricao: "Lenda Alemã • 7x Campeão Mundial" },
+        { nome: "Lewis Hamilton", descricao: "Recordista • 7x Campeão Mundial" },
+        { nome: "Juan Manuel Fangio", descricao: "Lenda Argentina • 5x Campeão" },
+        { nome: "Fernando Alonso", descricao: "Bicampeão • 2x Campeão Mundial" }
+      ],
+      tenis: [
+        { nome: "Roger Federer", descricao: "Lenda Suíça • 20x Grand Slam" },
+        { nome: "Serena Williams", descricao: "Rainha do Tênis • 23x Grand Slam" },
+        { nome: "Rafael Nadal", descricao: "Rei de Roland Garros • 22x Grand Slam" },
+        { nome: "Novak Djokovic", descricao: "Sérvio Dominante • 24x Grand Slam" },
+        { nome: "Carlos Alcaraz", descricao: "Jovem Promessa • 4x Grand Slam" },
+        { nome: "Artur", descricao: "Tenista Brasileiro • Destaque Nacional" }
+      ]
+    };
+
+    // ====== FUNÇÃO PARA INICIALIZAR CADA SEÇÃO ======
+    function inicializarEsporte(nomeEsporte) {
+      const atletesList = atletas[nomeEsporte];
+      const letrasUnicas = new Set();
+
+      // Coleta todas as primeiras letras
+      atletesList.forEach(atleta => {
+        const primeiraLetra = atleta.nome[0].toUpperCase();
+        letrasUnicas.add(primeiraLetra);
+      });
+
+      // Ordena as letras
+      const letrasOrdenadas = Array.from(letrasUnicas).sort();
+
+      // Cria os botões de filtro
+      const filtroContainer = document.getElementById(`filtro-${nomeEsporte}`);
+      letrasOrdenadas.forEach((letra, index) => {
+        const btn = document.createElement('button');
+        btn.classList.add('letra-btn');
+        if (index === 0) btn.classList.add('active');
+        btn.textContent = letra;
+        btn.addEventListener('click', () => filtrarPorLetra(nomeEsporte, letra, btn));
+        filtroContainer.appendChild(btn);
+      });
+
+      // Mostra atletas da primeira letra
+      filtrarPorLetra(nomeEsporte, letrasOrdenadas[0]);
+    }
+
+    // ====== FUNÇÃO PARA FILTRAR POR LETRA ======
+    function filtrarPorLetra(nomeEsporte, letra, botao = null) {
+      if (botao) {
+        // Remove active de todos os botões
+        document.querySelectorAll(`#filtro-${nomeEsporte} .letra-btn`).forEach(btn => {
+          btn.classList.remove('active');
+        });
+        // Adiciona active no botão clicado
+        botao.classList.add('active');
+      }
+
+      const atletasContainer = document.getElementById(`atletas-${nomeEsporte}`);
+      atletasContainer.innerHTML = '';
+
+      const atletesFiltrados = atletas[nomeEsporte].filter(atleta => 
+        atleta.nome[0].toUpperCase() === letra
+      );
+
+      if (atletesFiltrados.length === 0) {
+        atletasContainer.innerHTML = '<div class="mensagem-vazia">Nenhum atleta encontrado com essa letra</div>';
+      } else {
+        atletesFiltrados.forEach(atleta => {
+          const card = document.createElement('div');
+          card.classList.add('atleta-card');
+          card.innerHTML = `
+            <h3>${atleta.nome}</h3>
+            <p>${atleta.descricao}</p>
+          `;
+          atletasContainer.appendChild(card);
+        });
+      }
+    }
+
+    // ====== INICIALIZAR AS TRÊS SEÇÕES ======
+    inicializarEsporte('futebol');
+    inicializarEsporte('f1');
+    inicializarEsporte('tenis');
+
+    // ====== ÍCONE DO MENU ANIMADO ======
+    const icons = ["icons/futebol-icone.png", "icons/pneu-icone.png", "icons/tenis-icone.png"];
+    let i = 0;
+    const menuIcon = document.getElementById("menu-icon");
+    const menu = document.getElementById("menu");
+
+    let iconInterval;
+
+    function startIconAnimation() {
+      if (window.innerWidth > 768) {
+        iconInterval = setInterval(() => {
+          i = (i + 1) % icons.length;
+          menuIcon.src = icons[i];
+        }, 2000);
+      }
+    }
+
+    function stopIconAnimation() {
+      clearInterval(iconInterval);
+    }
+
+    startIconAnimation();
+
+    // ====== MENU MOBILE ======
+    menuIcon.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        menu.classList.toggle('active');
+        
+        let overlay = document.querySelector('.menu-overlay');
+        if (!overlay) {
+          overlay = document.createElement('div');
+          overlay.classList.add('menu-overlay');
+          document.body.appendChild(overlay);
+          
+          overlay.addEventListener('click', () => {
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+          });
+        }
+        overlay.classList.toggle('active');
+      }
+    });
+
+    document.querySelectorAll('.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          menu.classList.remove('active');
+          const overlay = document.querySelector('.menu-overlay');
+          if (overlay) overlay.classList.remove('active');
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        menu.classList.remove('active');
+        const overlay = document.querySelector('.menu-overlay');
+        if (overlay) overlay.classList.remove('active');
+        stopIconAnimation();
+        startIconAnimation();
+      } else {
+        stopIconAnimation();
+      }
+    });
+  </script>
+
+</body>
+</html>
