@@ -1,10 +1,3 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
 header {
   background: #fff;
   color: #111;
@@ -28,6 +21,8 @@ header nav {
 
 body {
   font-family: "Raleway", sans-serif;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .menu {
@@ -248,37 +243,252 @@ body {
 .prev { left: 20px; }
 .next { right: 20px; }
 
-/* ====== PROGRAMAÇÃO ====== */
+/* ====== PROGRAMAÇÃO - CARDS MODERNOS ====== */
+/* ====== PROGRAMAÇÃO - CARDS MODERNOS ====== */
 #campeonatos {
   text-align: center;
-  padding: 50px 20px;
-  background: white;
-  color: black;
+  padding: 60px 20px;
+  background: #f5f5f5;
+  color: #333;
 }
 
 #campeonatos h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+  font-family: "Michroma", sans-serif;
 }
 
-.programacao {
+/* Grid para os cards de programação */
+#campeonatos .programacao {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards da programação */
+#campeonatos .card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#campeonatos .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+/* Header dos cards - CORES SÓLIDAS */
+#campeonatos .card-header {
+  padding: 20px;
+  color: white;
+  position: relative;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#campeonatos .card-header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  flex: 1;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+#campeonatos .card-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+#campeonatos .status-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Cores SÓLIDAS (sem gradiente) */
+#campeonatos .card-header.futebol { 
+  background: #059669;
+}
+#campeonatos .futebol .status-badge { color: #059669; }
+
+#campeonatos .card-header.tenis { 
+  background: #d97706;
+}
+#campeonatos .tenis .status-badge { color: #d97706; }
+
+#campeonatos .card-header.f1 { 
+  background: #dc2626;
+}
+#campeonatos .f1 .status-badge { color: #dc2626; }
+
+/* Body dos cards */
+#campeonatos .card-body {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+#campeonatos .info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+#campeonatos .info-row svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Footer dos cards - BOTÃO CORRIGIDO */
+#campeonatos .card-footer {
+  padding: 0 20px 20px 20px;
+  margin-top: auto;
+}
+
+#campeonatos .btn-detalhes {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#campeonatos .btn-detalhes:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* Cards da programação */
+#campeonatos .card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 350px; /* Altura mínima */
+  max-height: 400px; /* Altura máxima - ADICIONE ESTA LINHA */
+}
+
+/* Ajuste o body para rolar se tiver muito conteúdo */
+#campeonatos .card-body {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto; /* Permite scroll se necessário */
+  max-height: 180px; /* Limita altura do conteúdo */
+}
+
+/* SOLUÇÃO MAIS AGRESSIVA - Grid com largura fixa */
+#campeonatos .programacao {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 360px); /* Largura fixa de 360px por card */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center; /* Centraliza o grid */
+}
+
+#campeonatos .card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  width: 360px; /* Largura fixa */
+  height: 380px; /* Altura fixa */
+}
+
+#campeonatos .card-body {
+  padding: 20px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ====== ÍDOLOS - CORES DIFERENTES ====== */
+/* ====== ÍDOLOS - CORES DIFERENTES (SEM AFETAR HISTÓRIA) ====== */
+#idolos {
+  text-align: center;
+  padding: 60px 20px;
+  background: #111827;
+  color: white;
+}
+
+#idolos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #3b82f6;
+  text-align: center;
+  font-family: "Michroma", sans-serif;
+}
+
+#idolos > p {
+  margin-bottom: 40px;
+  color: #a0aec0;
+  text-align: center;
+}
+
+/* Grid para ídolos */
+#idolos .programacao {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.prog-card {
-  background: #2a3242;
+/* Cards dos ídolos - cores DIFERENTES da programação */
+#idolos .prog-card {
   border-radius: 15px;
   padding: 25px;
-  width: 280px;
+  width: 320px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.4);
   color: white;
 }
 
-.icon-circle {
+
+#idolos .icon-circle {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -288,81 +498,41 @@ body {
   justify-content: center;
 }
 
-.icon-circle img {
-  width: 40px;
-  height: 40px;
+#idolos .icon-circle img {
+  width: 45px;
+  height: 45px;
+  animation: rotate 6s linear infinite;
 }
 
-.prog-card h3 {
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-.prog-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px 0;
-  text-align: left;
-}
-
-.prog-card ul li {
-  margin: 10px 0;
-  font-size: 0.95rem;
-}
-
-.prog-card ul li span {
-  color: #00c46b;
-  font-weight: bold;
-  margin-right: 8px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn-futebol { background: #1f8f3d; }
-.btn-tenis { background: #2b6dd8; }
-.btn-f1 { background: #d62828; }
-
-.btn:hover { opacity: 0.8; }
-
-/* ====== CARROSSEL DE ÍDOLOS ====== */
-/* ====== CARROSSEL DE ÍDOLOS - CORRIGIDO ====== */
-.idolo-carrossel-container {
+/* Carrossel de ídolos */
+#idolos .idolo-carrossel-container {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-.idolo-slides {
+#idolos .idolo-slides {
   display: flex;
   position: relative;
   width: 100%;
 }
 
-.idolo-slide {
+#idolos .idolo-slide {
   min-width: 100%;
   max-width: 100%;
   flex-shrink: 0;
   box-sizing: border-box;
 }
 
-.idolo-slide:not(.active) {
+#idolos .idolo-slide:not(.active) {
   display: none;
 }
 
-.idolo-slide.active {
+#idolos .idolo-slide.active {
   display: block;
 }
 
-.idolo-card {
+#idolos .idolo-card {
   background: #1e2530;
   border-radius: 12px;
   padding: 15px;
@@ -371,31 +541,32 @@ body {
   width: 100%;
 }
 
-.idolo-card img {
+#idolos .idolo-card img {
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
   display: block;
 }
 
-.idolo-card h4 {
+#idolos .idolo-card h4 {
   margin: 8px 0 5px 0;
   font-size: 1.2rem;
   color: white;
 }
 
-.idolo-card p {
+#idolos .idolo-card p {
   font-size: 0.9rem;
   color: #cbd5e0;
   margin: 0;
 }
 
 /* Botões do carrossel de ídolos */
-.idolo-prev, .idolo-next {
+#idolos .idolo-prev, 
+#idolos .idolo-next {
   position: absolute;
-  top: 40%;
+  top: 50%;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.7);
   color: white;
@@ -408,20 +579,21 @@ body {
   transition: background 0.3s;
 }
 
-.idolo-prev:hover, .idolo-next:hover {
+#idolos .idolo-prev:hover, 
+#idolos .idolo-next:hover {
   background: rgba(0, 0, 0, 0.9);
 }
 
-.idolo-prev {
+#idolos .idolo-prev {
   left: 10px;
 }
 
-.idolo-next {
+#idolos .idolo-next {
   right: 10px;
 }
 
 /* Indicadores (bolinhas) */
-.idolo-indicators {
+#idolos .idolo-indicators {
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -429,7 +601,7 @@ body {
   padding-bottom: 10px;
 }
 
-.idolo-indicator {
+#idolos .idolo-indicator {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -438,81 +610,10 @@ body {
   transition: all 0.3s;
 }
 
-.idolo-indicator.active {
+#idolos .idolo-indicator.active {
   background: #00c46b;
   width: 12px;
   height: 12px;
-}
-
-/* Botões do carrossel de ídolos */
-.idolo-prev, .idolo-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  font-size: 1.5rem;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
-  z-index: 10;
-  transition: background 0.3s;
-}
-
-.idolo-prev:hover, .idolo-next:hover {
-  background: rgba(0, 0, 0, 0.9);
-}
-
-.idolo-prev {
-  left: 10px;
-}
-
-.idolo-next {
-  right: 10px;
-}
-
-/* Indicadores (bolinhas) */
-.idolo-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 15px;
-}
-
-.idolo-indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #4a5568;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.idolo-indicator.active {
-  background: #00c46b;
-  width: 12px;
-  height: 12px;
-}
-
-#idolos {
-  text-align: center;
-  padding: 60px 20px;
-  background: #111827;
-  color: white;
-}
-
-#idolos h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #3b82f6;
-  text-align: center;
-}
-
-#idolos p {
-  margin-bottom: 40px;
-  color: #a0aec0;
-  text-align: center;
 }
 
 /* ====== HISTÓRIA ====== */
@@ -559,8 +660,9 @@ body {
   align-items: flex-start;
 }
 
-
-
+#idolos .prog-card {
+  background: #2a3242; /* Cinza escuro para todos */
+}
 /* REMOVA essa linha ou comente ela: */
 /* .row.right { flex-direction: row-reverse; } */
 
@@ -653,6 +755,118 @@ body {
 .text-col {
   flex: 1;
   min-width: 300px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Carrossel */
+.carrossel {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-height: none;
+  overflow: hidden;
+  margin-top: 60px;
+  margin-left: 0;
+  margin-right: 0;
+  background: #000;
+  touch-action: pan-y;
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.6s ease-in-out;
+  touch-action: pan-y;
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  min-width: 100vw;
+  width: 100vw;
+  height: 100%;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(50%);
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slide-content h1 {
+  font-family: "Michroma", sans-serif;
+  font-size: 150px; /* Tamanho padrão para desktop */
+  margin: 0 0 10px 0;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 4px;
+  white-space: nowrap;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .slide-content h1 {
+    font-size: 100px;
+    letter-spacing: 3px;
+  }
+}
+
+/* Tablets pequenos */
+@media (max-width: 768px) {
+  .slide-content h1 {
+    font-size: 60px;
+    letter-spacing: 2px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .slide-content h1 {
+    font-size: 40px;
+    white-space: normal; /* Permite quebra de linha se necessário */
+    line-height: 1.2;
+  }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+  .slide-content h1 {
+    font-size: 32px;
+  }
+}
+
+
+h2{
+  font-family: "Michroma", sans-serif;
 }
 
 /* Responsivo */
@@ -769,6 +983,79 @@ body {
   text-align: center; 
 }
 
+/* ====== REGRAS - CORES DINÂMICAS POR ESPORTE ====== */
+
+/* Fundo padrão (quando nenhuma aba está ativa ou Futebol) */
+#regras {
+  background-color: #0b1220;
+  padding: 60px 0;
+  color: #e6eef8;
+  transition: background-color 0.5s ease;
+}
+
+/* Quando a aba de FUTEBOL está ativa */
+#regras.active-futebol {
+  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
+}
+
+#regras.active-futebol .rule-card {
+  background: #10b981;
+}
+
+#regras.active-futebol .rule-card h3 {
+  color: white;
+}
+
+#regras.active-futebol .rule-card ul li {
+  color: #f0fdf4;
+}
+
+#regras.active-futebol .rule-card ul li::before {
+  color: white;
+}
+
+/* Quando a aba de TÊNIS está ativa */
+#regras.active-tenis {
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+}
+
+#regras.active-tenis .rule-card {
+  background: #f59e0b;
+}
+
+#regras.active-tenis .rule-card h3 {
+  color: white;
+}
+
+#regras.active-tenis .rule-card ul li {
+  color: #fef3c7;
+}
+
+#regras.active-tenis .rule-card ul li::before {
+  color: white;
+}
+
+/* Quando a aba de F1 está ativa */
+#regras.active-f1 {
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+}
+
+#regras.active-f1 .rule-card {
+  background: #ef4444;
+}
+
+#regras.active-f1 .rule-card h3 {
+  color: white;
+}
+
+#regras.active-f1 .rule-card ul li {
+  color: #fef2f2;
+}
+
+#regras.active-f1 .rule-card ul li::before {
+  color: white;
+}
+
 /* ====== ANIMAÇÃO DE ROTAÇÃO NOS ÍCONES ====== */
 
 /* Ícones do menu (header) */
@@ -780,6 +1067,125 @@ body {
 .icon-circle img {
   animation: rotate 6s linear infinite;
 }
+
+ .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    .card-header {
+      padding: 20px;
+      color: white;
+      position: relative;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-header h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    .status-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(255,255,255,0.9);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* Cores por esporte */
+    .futebol { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+    .futebol .status-badge { color: #059669; }
+
+    .tenis { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+    .tenis .status-badge { color: #d97706; }
+
+    .f1 { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+    .f1 .status-badge { color: #dc2626; }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .info-row svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .card-footer {
+      padding: 0 20px 20px 20px;
+    }
+
+    .btn-detalhes {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      color: #333;
+      text-decoration: none;
+      text-align: center;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-detalhes:hover {
+      background: #f9fafb;
+      border-color: #d1d5db;
+    }
+
+    @media (max-width: 768px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+    }
 
 /* Definição da animação */
 @keyframes rotate {
@@ -804,6 +1210,37 @@ footer {
   padding: 15px;
 }
 
+/* ====== ÍCONES DA HISTÓRIA - TAMANHO CORRETO ====== */
+#historia .icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* Sem fundo colorido */
+}
+
+#historia .icon-circle img {
+  width: 50px;
+  height: 50px;
+  animation: rotate 6s linear infinite;
+}
+
+/* Se quiser pausar a rotação no hover */
+#historia .icon-circle img:hover {
+  animation-play-state: paused;
+}
+
+/* Ícones das abas de regras */
+.tab-btn img { 
+  width: 20px; 
+  height: 20px;
+  animation: none; /* Remove rotação dos ícones das abas */
+}
+
+
 /* ====== RESPONSIVO ====== */
 @media (max-width: 768px) {
   .slide-content h1 {
@@ -827,6 +1264,7 @@ footer {
     font-size: 1rem;
   }
 }
+
 @media (max-width: 900px) {
   .row, .row.right { 
     flex-direction: column; 
